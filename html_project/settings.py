@@ -53,6 +53,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     
     'blog', # add this line to the end of INSTALLED_APPS list
+    'core', # add this line to the end of INSTALLED_APPS list
+    'courses', # add this line to the end of INSTALLED_APPS list
 ]
 
 ROOT_URLCONF = 'html_project.urls'
