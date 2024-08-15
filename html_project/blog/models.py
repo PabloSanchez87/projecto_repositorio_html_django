@@ -22,5 +22,10 @@ class Post(models.Model):
         default=timezone.now
         ) # Cuando se ha creado esa entidad.
     
+    show_home = models.BooleanField(
+        verbose_name='Mostrar en home', 
+        default=False
+        )
+    
     def __str__(self) -> str:
         return self.title

@@ -8,7 +8,7 @@
 
 {% load static %}
 <main>
-
+  <hr>
     <section>
       <h1>¡Bienvenidos a nuestra academia online!</h1>
       <p>Estamos encantados de tenerte con nosotros. Aquí encontrarás una comunidad dedicada al aprendizaje y
@@ -32,6 +32,29 @@
       </p>
       </p>
     </section>
+    
+    <hr>
+
+    <h2>Últimos cursos</h2>
+    {% for course in courses %}
+      <article id='{{ course.id }}'>
+          <h3>{{ course.tittle }}</h3>
+          <p>{{ course.content|truncatechars:100 }}</p>
+          <p><a href="{% url 'courses:course_detail' course.id %}">Leer más...</a></p>
+      </article>    
+    {% endfor %}
+
+    <hr>
+
+    <h2>Últimos noticias</h2>
+    {% for post in posts %}
+    <article id='{{ post.id }}'>
+        <h3>{{post.title}}</h3>
+        <p>{{post.created_at}}</p>
+        <p>{{post.content|truncatechars:100}}</p>
+        <p><a href="{% url 'blog:blog_detail' post.id %}">Leer más...</a></p>
+    </article>
+    {% endfor %}  
 
   </main>
 

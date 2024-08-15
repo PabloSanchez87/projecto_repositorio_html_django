@@ -25,5 +25,10 @@ class Course(models.Model):
         null=True,
         auto_now_add=True)
     
+    show_home = models.BooleanField(
+        verbose_name='Mostrar en home', 
+        default=False
+        )
+    
     def __str__(self) -> str:
         return self.tittle

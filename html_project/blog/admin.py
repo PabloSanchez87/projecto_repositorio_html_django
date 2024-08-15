@@ -5,7 +5,7 @@ from .models import Post
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
     model = Post
-    list_display = ('pk','title', 'author', 'created_at')  # Campos a mostrar en la lista
+    list_display = ('pk','title', 'author', 'created_at', 'show_home')  # Campos a mostrar en la lista
     list_display_links = ('title', 'author')  # Campos clicables para editar
     
     
