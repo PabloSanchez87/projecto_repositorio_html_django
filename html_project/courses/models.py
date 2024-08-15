@@ -30,10 +30,10 @@ class Course(models.Model):
         default=False
         )
     
-    toc = models.FieldFile(
+    toc = models.FileField(
         verbose_name='Tabla de contenidos',
-        help_text='Ingrese la tabla de contenidos del curso',
-        upload_to='courses/tocs/',
+        help_text='Ingrese el archivo PDF con la tabla de contenidos del curso',
+        upload_to='courses/tocs/%Y/%m/%d',
         blank=True,
         null=True,
     )
