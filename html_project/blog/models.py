@@ -7,16 +7,20 @@ class Post(models.Model):
         verbose_name='Título',
         max_length=200
         )
+    
     content = models.TextField(
         verbose_name='Contenido',
         )
     
     author = models.CharField(
         verbose_name='Autor',
-        max_length=100)
+        max_length=100
+        )
+    
     created_at = models.DateTimeField(
         verbose_name='Fecha de creación',
-        default=timezone.now) # Cuando se ha creado esa entidad.
+        default=timezone.now
+        ) # Cuando se ha creado esa entidad.
     
     def __str__(self) -> str:
         return self.title
