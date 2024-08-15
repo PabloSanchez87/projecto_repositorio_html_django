@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     
     'django_extensions',
     'debug_toolbar',
+    'thumbnails',
     
     'blog', 
     'core',
@@ -140,3 +141,28 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 import os
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+# pip install django-thumbnail
+THUMBNAILS = {
+    'METADATA': {
+        'BACKEND': 'thumbnails.backends.metadata.DatabaseBackend',
+    },
+    'STORAGE': {
+        'BACKEND': 'django.core.files.storage.FileSystemStorage',
+        # You can also use Amazon S3 or any other Django storage backends
+    },
+    'SIZES': {
+        'small': {
+            'PROCESSORS': [
+                {'PATH': 'thumbnails.processors.resize', 'width': 300, 'height': 200},
+            ],
+        },
+        'large': {
+            'PROCESSORS': [
+                {'PATH': 'thumbnails.processors.resize', 'width': 800, 'height': 600},
+            ],
+        },
+
+        }
+    }

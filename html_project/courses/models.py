@@ -1,4 +1,5 @@
 from django.db import models
+from thumbnails.fields import ImageField
 
 class Course(models.Model):
     tittle = models.CharField(
@@ -43,7 +44,7 @@ class Course(models.Model):
     
     # Imagen del curso. Solo se puede subir una imagen por curso. 
     # Si se sube otra, la anterior se borra.
-    course_image = models.ImageField(
+    course_image = ImageField(
         verbose_name='Imagen del curso',
         help_text='Ingrese la imagen del curso',
         upload_to='courses/images/',

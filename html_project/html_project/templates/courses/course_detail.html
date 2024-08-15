@@ -11,7 +11,7 @@
         
         {% if course.course_image%}
             <picture>
-                <img width="250" src="{{ course.course_image.url }}"/>  
+                <img src="{{ course.course_image.thumbnails.small.url }}"/>  
             </picture>  
 
         {% endif %}
