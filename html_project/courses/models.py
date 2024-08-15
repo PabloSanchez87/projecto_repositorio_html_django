@@ -1,5 +1,6 @@
 from django.db import models
 from thumbnails.fields import ImageField
+from ckeditor.fields import RichTextField
 
 class Course(models.Model):
     tittle = models.CharField(
@@ -7,7 +8,7 @@ class Course(models.Model):
         help_text='Ingrese el título del curso',
         max_length=200)
     
-    content = models.TextField(
+    content = RichTextField(
         verbose_name='Descripción',
         help_text='Ingrese una descripción del curso',
     )

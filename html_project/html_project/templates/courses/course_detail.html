@@ -17,7 +17,7 @@
         {% endif %}
 
         <div>
-            {{ course.content }}
+            {{ course.content | safe }}
         </div>
         
         {% if course.toc %}

@@ -169,3 +169,18 @@ THUMBNAILS = {
         },
         }
     }
+
+# CKEditor --> https://django-ckeditor.readthedocs.io/en/latest/#required-for-using-widget-with-file-upload
+CKEDITOR_BASEPATH = "/static/ckeditor/ckeditor/"
+# Customize the toolbar and other configurations as needed. For example:
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Custom',
+        'toolbar_Custom': [
+            ['Bold', 'Italic', 'Underline'],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+            ['Link', 'Unlink'],
+            ['RemoveFormat', 'Source']
+        ]
+    }
+}
