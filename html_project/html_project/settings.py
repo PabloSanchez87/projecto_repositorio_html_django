@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django_extensions',
     'debug_toolbar',
     'thumbnails',
+    'ckeditor',
     
     'blog', 
     'core',
@@ -130,6 +131,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / "static"]
+STATIC_ROOT = BASE_DIR / "staticfiles"
 INTERNALSE_IPS = ['127.0.0.1']
 
 # Default primary key field type
@@ -144,6 +146,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 # pip install django-thumbnail
+# Django-Thumbnail settings 
+# You need to install django-thumbnail and set up the settings as follows:
 THUMBNAILS = {
     'METADATA': {
         'BACKEND': 'thumbnails.backends.metadata.DatabaseBackend',
@@ -163,6 +167,5 @@ THUMBNAILS = {
                 {'PATH': 'thumbnails.processors.resize', 'width': 600, 'height': 400},
             ],
         },
-
         }
     }
