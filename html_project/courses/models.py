@@ -30,5 +30,13 @@ class Course(models.Model):
         default=False
         )
     
+    toc = models.FieldFile(
+        verbose_name='Tabla de contenidos',
+        help_text='Ingrese la tabla de contenidos del curso',
+        upload_to='courses/tocs/',
+        blank=True,
+        null=True,
+    )
+    
     def __str__(self) -> str:
         return self.tittle
