@@ -25,11 +25,14 @@ class Course(models.Model):
         null=True,
         auto_now_add=True)
     
+    # Check_box para indicar si se muestra en la home.
     show_home = models.BooleanField(
         verbose_name='Mostrar en home', 
         default=False
         )
     
+    # Archivo PDF con la tabla de contenidos del curso. 
+    # Solo se puede subir un archivo por curso. Si se sube otro, el anterior se borra.
     toc = models.FileField(
         verbose_name='Tabla de contenidos',
         help_text='Ingrese el archivo PDF con la tabla de contenidos del curso',
