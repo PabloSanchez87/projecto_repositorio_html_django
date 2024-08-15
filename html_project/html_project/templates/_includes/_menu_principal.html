@@ -1,9 +1,9 @@
 <ul>
-    <li><a href="">Inicio</a></li >
-    <li><A href="">Sobre nosotros</A></li >
-    <li><A href="">Cursos</A></li >
-    <li><A href="">Blog</A></li >
-    <li><A href="">Registro</A></li>
-    <li><a href="">Login</a></li>
-    <li><a href="">Contacto</a></li>    
+    <li><a href="{% url 'core:home' %}">Inicio</a></li >
+    <li><A href="{% url 'core:about_us' %}">Sobre nosotros</A></li >
+    <li><A href="{% url 'courses:course_list' %}">Cursos</A></li >
+    <li><A href="{% url 'blog:blog_list' %}">Blog</A></li >
+    <li><A href="{% url 'core:register' %}">Registro</A></li>
+    <li><a href="{% url 'core:login' %}">Login</a></li>
+    <li><a href="{% url 'core:contact' %}">Contacto</a></li>    
 </ul>
