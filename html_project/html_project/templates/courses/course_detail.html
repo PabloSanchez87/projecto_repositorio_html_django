@@ -8,6 +8,14 @@
     <article id='{{ couse.id }}'>
         <h1>{{ course.tittle }}</h1>
         <p>{{ course.created_at }}</p>
+        
+        {% if course.course_image%}
+            <picture>
+                <img width="250" src="{{ course.course_image.url }}"/>  
+            </picture>  
+
+        {% endif %}
+
         <div>
             {{ course.content }}
         </div>

@@ -41,5 +41,15 @@ class Course(models.Model):
         null=True,
     )
     
+    # Imagen del curso. Solo se puede subir una imagen por curso. 
+    # Si se sube otra, la anterior se borra.
+    course_image = models.ImageField(
+        verbose_name='Imagen del curso',
+        help_text='Ingrese la imagen del curso',
+        upload_to='courses/images/',
+        blank=True,
+        null=True,
+    )
+    
     def __str__(self) -> str:
         return self.tittle
