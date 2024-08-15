@@ -8,8 +8,14 @@
     <article id='{{ couse.id }}'>
         <h1>{{ course.tittle }}</h1>
         <p>{{ course.created_at }}</p>
-        <p>{{ course.content }}</p>
+        <div>
+            {{ course.content }}
+        </div>
         
+        {% if course.toc %}
+            <p><a href="{{ course.toc.url }}" download>Descarga el temario.</a></p>
+        {% endif %}
+
         <button onClick="window.location.href='{{ course.call_link }}'">Contactar</button>
         <p><a href="{% url 'courses:course_list' %}">Volver a la lista de cursos.</a></p>
     </article>
