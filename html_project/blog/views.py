@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import Post
 
-# Función modo ejemplo para enlazar con la un "home_view"
+# Create your views here.
 def blog_list(request):
     all_posts = Post.objects.all()  # Obtiene todos los posts de la base de datos.
     
@@ -19,3 +19,4 @@ def blog_detail(request, id):
     return render(request, 'blog/blog_detail.html', context)
 
 
+ 

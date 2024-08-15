@@ -7,5 +7,13 @@
 {% block page_content %}
     <h1>Lista de cursos</h1>
 
+    {% for course in courses %}
+        <article id='{{ course.id }}'>
+            <h2>{{ course.tittle }}</h2>
+            <p>{{ course.content|truncatechars:100 }}</p>
+            <p><a href="{% url 'courses:course_detail' course.id %}">Leer más...</a></p>
+        </article>    
+    {% endfor %}
+
 {% endblock %}
 

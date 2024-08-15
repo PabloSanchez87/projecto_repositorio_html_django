@@ -9,8 +9,6 @@ class Course(models.Model):
     content = models.TextField(
         verbose_name='Descripción',
         help_text='Ingrese una descripción del curso',
-        blank=True,
-        null=True,  
     )
     
     call_link = models.URLField(

@@ -5,6 +5,13 @@
 {% block page_title %}Curso{% endblock %}
 
 {% block page_content %}
-    <h1>course detail</h1>
+    <article id='{{ couse.id }}'>
+        <h1>{{ course.tittle }}</h1>
+        <p>{{ course.created_at }}</p>
+        <p>{{ course.content }}</p>
+        
+        <button onClick="window.location.href='{{ course.call_link }}'">Contactar</button>
+        <p><a href="{% url 'courses:course_list' %}">Volver a la lista de cursos.</a></p>
+    </article>
 
 {% endblock %}
