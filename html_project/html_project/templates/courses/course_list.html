@@ -10,6 +10,14 @@
     {% for course in courses %}
         <article id='{{ course.id }}'>
             <h2>{{ course.tittle }}</h2>
+            {% if course.course_image%}
+            <picture>
+                <img src="{{ course.course_image.thumbnails.small.url }}"/>  
+            </picture>  
+
+        {% endif %}
+
+
             <p>{{ course.content|truncatechars:100 }}</p>
             <p><a href="{% url 'courses:course_detail' course.id %}">Leer más...</a></p>
         </article>    
