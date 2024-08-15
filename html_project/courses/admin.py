@@ -1,3 +1,9 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Course
+
+@admin.register(Course)
+class CourseAdmin(admin.ModelAdmin):
+    model=Course
+    list_display=('tittle', 'created_at')
+    list_display_links = ('tittle', )
