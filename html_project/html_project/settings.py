@@ -200,3 +200,9 @@ CKEDITOR_CONFIGS = {
 # EMAIL_PORT = 587
 # EMAIL_HOST = 'smtp.gmail.com'
 # DEFAULT_CHARSET = 'utf-8'
+
+
+# VARIABLES GLOBALES PARA LA PROTECCION DE VISTAS
+LOGIN_URL = '/login/' # URL de inicio de sesion
+LOGIN_REDIRECT_URL = '/home/' # URL a la que redirigira al usuario una vez logeado
+LOGOUT_REDIRECT_URL = '/' # URL a la que redirigira al usuario una vez deslogeado

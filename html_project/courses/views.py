@@ -1,9 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Course  # Importa el modelo Course desde el archivo models.py.
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 # Vistas: Funciones que responden a las peticiones HTTP de los usuarios.
 # Cada vista es una función que recibe un request y devuelve un response.
+@login_required # Decorador para obligar a los usuarios a iniciar sesión antes de acceder a la vista.
+
 def course_list(request):
     all_courses = Course.objects.all()  # Obtiene todos los cursos de la base de datos.
     
@@ -12,7 +15,7 @@ def course_list(request):
     return render(request, 'courses/course_list.html', context)  # Render: Necesita un request y un template.
                                             # Busca el template en el archivo settings.py
 
-
+@login_required
 def course_detail(request, id):
     course = Course.objects.get(pk=id)  # Obtiene un curso de la base de datos según su ID.
     context = {'course': course}  # Crea un diccionario con el curso para pasarlo al template.

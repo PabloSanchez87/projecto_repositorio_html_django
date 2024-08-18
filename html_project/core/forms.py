@@ -10,3 +10,11 @@ class ContactForm(forms.Form):
         if len(message) < 10:
             raise forms.ValidationError("Message must be at least 10 characters long.")
         return message
+    
+    
+        
+class LoginForm(forms.Form):
+    username = forms.CharField(max_length=100, label="Nombre de usuario")
+    password = forms.CharField(widget=forms.PasswordInput, label="Password")
+
+    
