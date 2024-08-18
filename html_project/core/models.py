@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class Contant(models.Model):
+class Contact(models.Model):
     name = models.CharField(verbose_name='Nombre', max_length=200)
     email = models.EmailField(verbose_name='Correo Electronico',
                               max_length=255, 
