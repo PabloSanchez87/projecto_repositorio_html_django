@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from courses.models import Course
 from blog.models import Post
+from core.forms import ContactForm
 
 # Create your views here.
 # Vistas: Funciones que responden a las peticiones HTTP de los usuarios.
@@ -28,5 +29,30 @@ def register(request):
     return render(request, 'core/register.html')
 
 def contact(request):
-    return render(request, 'core/contact.html')
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            # Procesar los datos del formulario
+            nombre = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            mensaje = form.cleaned_data['message']
+            
+            # Aquí podrías guardar los datos en la base de datos o enviar un correo
+            print(f'El usuario {nombre} con dirección {email} ha enviado el siguiente mensaje: {mensaje}')
+            
+            context = {
+                'form': form,
+                'success': True
+            }
+            
+            return render(request, 'core/contact.html', context)
+        
+    else:
+        form = ContactForm()
+
+    context = {
+        'form': form
+    }   
+    
+    return render(request, 'core/contact.html', context)
 
