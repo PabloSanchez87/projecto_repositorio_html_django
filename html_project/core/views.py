@@ -6,6 +6,8 @@ from core.forms import ContactForm
 # Importamos send_mail para enviar correos electrónicos
 from django.core.mail import send_mail
 
+from .models import Contact
+
 
 # Create your views here.
 # Vistas: Funciones que responden a las peticiones HTTP de los usuarios.
@@ -40,6 +42,8 @@ def contact(request):
             nombre = form.cleaned_data['name']
             email = form.cleaned_data['email']
             mensaje = form.cleaned_data['message']
+            
+            Contact.objects.create(name=nombre, email=email, message=mensaje)
             
             # Aquí podrías guardar los datos en la base de datos o enviar un correo
             print(f'El usuario {nombre} con dirección {email} ha enviado el siguiente mensaje: {mensaje}')
