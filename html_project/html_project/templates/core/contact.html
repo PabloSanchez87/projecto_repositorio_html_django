@@ -5,14 +5,18 @@
 {% block page_title %}Contacto{% endblock %}
 
 {% block page_content %}
-    <h1>contact</h1>
+    <h1>Contacto</h1>
 
     <div>
-        <form action="" method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Enviar</button>
-        </form>
+        {% if success %}
+            <p>Se ha enviado el correo correctamente</p>
+        {% else %}
+            <form action="" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Enviar</button>
+            </form>
+        {% endif %}
     </div>    
 
 {% endblock %}
