@@ -184,3 +184,19 @@ CKEDITOR_CONFIGS = {
         ]
     }
 }
+
+
+ # Cambiaramos el print por la funcion send_mail de django.core.mail
+    # Necesario configurar settings.py para que funcione send_mail
+    # Mail is sent using the SMTP host and port specified in the EMAIL_HOST and EMAIL_PORT settings. 
+    # The EMAIL_HOST_USER and EMAIL_HOST_PASSWORD settings, if set, are used to authenticate to the SMTP server, 
+    # and the EMAIL_USE_TLS and EMAIL_USE_SSL settings control whether a secure connection is used.
+    # Nota
+    # The character set of email sent with django.core.mail will be set to the value of your DEFAULT_CHARSET setting.
+
+# EMAIL_HOST_USER = 'your-email@example.com'
+# EMAIL_HOST_PASSWORD = 'your-password'
+# EMAIL_USE_TLS = True
+# EMAIL_PORT = 587
+# EMAIL_HOST = 'smtp.gmail.com'
+# DEFAULT_CHARSET = 'utf-8'
