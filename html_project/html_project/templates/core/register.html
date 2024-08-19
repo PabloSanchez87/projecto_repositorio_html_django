@@ -5,7 +5,22 @@
 {% block page_title %}Registro{% endblock %}
 
 {% block page_content %}
-    <h1>registo</h1>
+    <h1>Registo</h1>
+    {% if form %}
+        {% if error_message %}
+            <p style="color: red; font-weight: bold;">Error: {{error_message}}</p>
+        {% endif %}
+        <form action="/register/" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Registrar"/>
+        </form>
+    {% else %}
+        <p>Formulario no disponible</p>
+    {% endif %}
+    <p>¿Ya TIENES CUENTA? <a href="/login/">INICIA SESION</a></p>
+    <hr/>
+    <p><a href="/">VOLVER A LA PAGINA PRINCIPAL</a></p>
 
 {% endblock %}
 
