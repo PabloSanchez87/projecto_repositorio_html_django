@@ -7,8 +7,6 @@ from django.urls import reverse
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.models import User
 
-
-
 # Importamos send_mail para enviar correos electrónicos
 from django.core.mail import send_mail
 
@@ -116,6 +114,14 @@ def contact(request):
             #     ['to@example.com'],  # Destinatario
             #     fail_silently=False  # Si falla el envio no detiene la ejecucion del codigo
             # )            
+            
+            send_mail(
+                'Contacto desde el sitio web',  # Asunto del correo
+                mensaje,  # Mensaje del correo
+                'from@example.com',  # Remitente
+                [email],  # Destinatario
+                fail_silently=False  # Si falla el envio no detiene la ejecucion del codigo
+            )
             
             context = {
                 'form': form,

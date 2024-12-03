@@ -201,6 +201,17 @@ CKEDITOR_CONFIGS = {
 # EMAIL_HOST = 'smtp.gmail.com'
 # DEFAULT_CHARSET = 'utf-8'
 
+## NOTA ##
+# Si queremos usar nuestra cuenta de gmail para enviar correos desde nuestro servidor
+# necesitamos configurar el backend de email de django para que use nuestra cuenta de gmail.
+# Necesitamos crear una contraseña de aplicación en nuestra cuenta de gmail, que se genera
+# buscando en la seguridad de la cuentra "clave aplicacion" y copiando la clave.
+
+# Backend de email pruebas por consola.
+# Configuración de correo para el entorno de desarrollo
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+
 
 # VARIABLES GLOBALES PARA LA PROTECCION DE VISTAS
 LOGIN_URL = '/login/' # URL de inicio de sesion
